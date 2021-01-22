@@ -1,0 +1,31 @@
+<title> Signin </title>
+
+{{ template "templates/layouts/authheader.html" .}}
+
+<div class="container">
+
+  <div class="login-wrapo flex">
+
+    <div class="login-box">
+
+      <h2>Sign in</h2>
+      <span style="color: rgb(228, 60, 18); font-size: 10pt">{{.data}}</span>
+      <form action="/" method="POST">
+
+        <input type="text" id="UserEmail" name="email" placeholder="Email Id">
+
+        <input type="password" id="Userpass" name="password" placeholder="Password">
+
+        <button class="ripple hand" id="btn-login" style="cursor: pointer;"> Sign in </button>
+
+      </form>
+
+      <p class="flex"> <a href="/register"> New user?</a> </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+{{ template "templates/layouts/authfooter.html" .}}

@@ -1,0 +1,68 @@
+{{ define "templates/layouts/header.html"}}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/responsive_product.css">
+
+
+
+
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <div class="flex header-wrap">
+        <div class="logo"> <a href="javascript:Void(0)"> <img src="assets/img/logo.svg"> </a> </div>
+        <div class="search-box">
+          <input type="text">
+        </div>
+        <div class="header-right flex">
+          <div class="flex hdr-card">
+            <p>Shopping Cart</p>
+
+            <a href="/myorders"> <img src="assets/img/cart.svg"> <span id="snackbar1">{{.orderscount}}</span> </a>
+          </div>
+
+
+          <div class="login-btn">
+            <nav class="navbar navbar-dark  navbar-expand-sm">
+
+              <div class="collapse navbar-collapse" id="navbar-list-4">
+                <ul class="navbar-nav">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;;">
+                      {{.name}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                      <a class="dropdown-item" href="/index">Products</a>
+                      <a class="dropdown-item" href="/myorders">My Orders</a>
+                      <a class="dropdown-item" href="/wishlist">My Wishlist</a>
+                      <a class="dropdown-item" href="/signout">Log Out</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </header>
+  {{end}}

@@ -1,0 +1,230 @@
+#snackbar {
+     visibility: hidden;
+     min-width: 250px;
+     margin-left: -125px;
+     background-color: green;
+     color: #fff;
+     text-align: center;
+     border-radius: 2px;
+     padding: 16px;
+     position: fixed;
+     z-index: 1;
+     left: 50%;
+     bottom: 30px;
+     font-size: 17px;
+   }
+ 
+   #snackbar.show {
+     visibility: visible;
+     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+     animation: fadein 0.5s, fadeout 0.5s 2.5s;
+   }
+ 
+   @-webkit-keyframes fadein {
+     from {
+       bottom: 0;
+       opacity: 0;
+     }
+ 
+     to {
+       bottom: 30px;
+       opacity: 1;
+     }
+   }
+ 
+   @keyframes fadein {
+     from {
+       bottom: 0;
+       opacity: 0;
+     }
+ 
+     to {
+       bottom: 30px;
+       opacity: 1;
+     }
+   }
+ 
+   @-webkit-keyframes fadeout {
+     from {
+       bottom: 30px;
+       opacity: 1;
+     }
+ 
+     to {
+       bottom: 0;
+       opacity: 0;
+     }
+   }
+ 
+   @keyframes fadeout {
+     from {
+       bottom: 30px;
+       opacity: 1;
+     }
+ 
+     to {
+       bottom: 0;
+       opacity: 0;
+     }
+   }
+ 
+ 
+ 
+ 
+ 
+   .cart-button {
+     position: relative;
+     outline: 0;
+     background-color: blue;
+     color: #fff;
+     border: none;
+     height: 40px;
+     width: 150px;
+     padding: 10px;
+     border-radius: 10px;
+     line-height: 0px;
+     overflow: hidden
+   }
+ 
+   .cart-button:focus {
+     outline: none !important
+   }
+ 
+   .cart-button .fa-plus {
+     position: absolute;
+     z-index: 2;
+     top: 50%;
+     left: 22%;
+     font-size: 1.2em;
+     transform: translate(-50%, -50%)
+   }
+ 
+   .cart-button .fa-circle-thin {
+     position: absolute;
+     z-index: 1;
+     top: 50%;
+     left: -20%;
+     font-size: 1.5em;
+     transform: translate(-50%, -50%)
+   }
+ 
+   .cart-button .fa-check {
+     position: absolute;
+     z-index: 1;
+     top: -52%;
+     left: 20%;
+     font-size: 0.7em;
+     transform: translate(-50%, -50%)
+   }
+ 
+   .cart-button span {
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     color: #fff;
+     transform: translate(-50%, -50%);
+     font-size: 16px
+   }
+ 
+   .cart-button span.added {
+     opacity: 0
+   }
+ 
+   .cart-button.clicked .fa-plus {
+     animation: addicon 2s ease-in forwards
+   }
+ 
+   .cart-button.clicked {
+     animation: color 2s ease-in forwards
+   }
+ 
+   .cart-button.clicked .fa-circle-thin {
+     animation: circle 1s ease-in forwards
+   }
+ 
+   .cart-button.clicked .fa-check {
+     animation: check 2s ease-in forwards
+   }
+ 
+   .cart-button.clicked span.add-to-cart {
+     animation: addcart 2s ease-in forwards
+   }
+ 
+   .cart-button.clicked span.added {
+     animation: added 2s ease-in forwards
+   }
+ 
+   @keyframes addicon {
+     0% {
+       opacity: 1
+     }
+ 
+     30%,
+     100% {
+       opacity: 0
+     }
+   }
+ 
+   @keyframes circle {
+     0% {
+       left: -10%
+     }
+ 
+     100% {
+       left: 20%
+     }
+   }
+ 
+   @keyframes check {
+ 
+     0%,
+     40% {
+       top: -20%
+     }
+ 
+     60% {
+       top: 48%
+     }
+ 
+     100% {
+       top: 48%
+     }
+   }
+ 
+   @keyframes addcart {
+ 
+     0%,
+     30% {
+       opacity: 1
+     }
+ 
+     30%,
+     100% {
+       opacity: 0
+     }
+   }
+ 
+   @keyframes added {
+ 
+     0%,
+     80% {
+       opacity: 0
+     }
+ 
+     100% {
+       opacity: 1
+     }
+   }
+ 
+   @keyframes color {
+     0% {
+       background-color: blue
+     }
+ 
+     80%,
+     100% {
+       background-color: green
+     }
+   }
+ 
+   

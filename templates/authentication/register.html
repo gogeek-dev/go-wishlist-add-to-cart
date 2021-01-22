@@ -1,0 +1,38 @@
+<title> Register </title>
+
+{{ template "templates/layouts/authheader.html" .}}
+
+<div class="container">
+
+  <div class="login-wrapo flex">
+
+    <div class="login-box">
+
+      <h2>Sign up</h2>
+
+      <span style="color: rgb(228, 60, 18); font-size: 10pt">{{.data}}</span>
+
+      <form method="POST" action="/register">
+
+        <input type="text" id="FirstName" name="firstname" placeholder="First Name">
+
+        <input type="text" id="EmailId" name="email" placeholder="Email Id">
+
+        <input type="text" id="MobileNo" name="mobile" placeholder="Mobile no">
+
+        <input type="text" id="Password" name="password" placeholder="Password">
+
+
+        <button class="ripple" style="cursor: pointer;" id="btn_Register"> Register </button>
+
+      </form>
+
+      <p class="flex"> <a href="/"> Already have an account? </a> </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+{{ template "templates/layouts/authfooter.html" .}}

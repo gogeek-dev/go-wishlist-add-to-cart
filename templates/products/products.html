@@ -1,0 +1,99 @@
+<title> Products </title>
+
+{{ template "templates/layouts/header.html" .}}
+
+
+<div class="page-wrapper">
+
+  <div class="box-wrapper">
+
+    <div class="breadcrumbs">
+      <ul class="flex">
+        <li><a href="javascript:void(0)">Home</a></li>
+        <li>></li>
+
+        <li><a href="javascript:void(0)">Products </a></li>
+      </ul>
+    </div>
+
+    <input type="hidden" id="showresults">
+    {{ range.products}}
+    <div class="flex product-list-row">
+      <div class="pl-img"> <img src="{{.Imagepath}}"> </div>
+      <div class="pl-content">
+        <h3><a href="javascript:Void(0)">{{.Title}}</a></h3>
+        <div class="flex rev-row">
+          <i class="fas fa-star active"></i>
+          <i class="fas fa-star active"></i>
+          <i class="fas fa-star active"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <p>(194 Reviews)</p>
+        </div>
+        <h2>₹{{.Price}}</h2>
+        <ul class="prd-dtl">
+          <li>Filling Material: Foam</li>
+          <li>Frame Material: Solid Wood</li>
+          <li>DIY - Basic assembly to be done with simple tools by the customer, comes with instructions.</li>
+          <li>This sofa set is a clear all-rounder</li>
+        </ul>
+
+
+        <div class="atc-wish flex">
+          {{if eq .Value 1}}
+          <a class=" flex added-wish" onclick="addwish('{{.ID}}')" id="add_wish{{.ID}}"
+            style="cursor: pointer;"><span></span> Add to
+            Wishlist</a>
+          {{else}}
+
+          <a class="flex" onclick="addwish('{{.ID}}')" href="#" id="add_wish{{.ID}}"
+            style="cursor:pointer;"><span></span> Add to
+            Wishlist</a>
+
+          {{end}}
+
+          {{if eq .Productcount 1}}
+
+          <button class="cart-button clicked" onclick="addcart('{{.ID}}')">Add to Cart <i class="fa fa-plus"></i> <i
+              class="fa fa-circle-thin"></i> <i class="fa fa-check"></i> </button>
+          {{else}}
+          <button class="cart-button" onclick="addcart('{{.ID}}')"> &nbsp; Add to Cart <i class="fa fa-plus"></i> <i
+              class="fa fa-circle-thin"></i> <i class="fa fa-check"></i> </button>
+          {{end}}
+        </div>
+      </div>
+    </div>
+
+    {{ end }}
+    <p id="snackbar"></p>
+
+  </div>
+
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+
+
+    const cartButtons = document.querySelectorAll('.cart-button');
+
+    cartButtons.forEach(button => {
+
+      button.addEventListener('click', cartClick);
+
+    });
+
+    function cartClick() {
+      let button = this;
+      button.classList.add('clicked');
+    }
+
+
+
+  });
+</script>
+
+
+
+
+{{ template "templates/layouts/footer.html"}}

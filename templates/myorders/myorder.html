@@ -1,0 +1,39 @@
+<title> My Orders </title>
+{{ template "templates/layouts/header.html" .}}
+
+<div class="page-wrapper">
+
+     <div class="box-wrapper">
+
+          <div class="breadcrumbs">
+               <ul class="flex">
+                    <li><a href="javascript:void(0)">Home</a></li>
+                    <li>></li>
+                    <li><a href="javascript:void(0)">My Account</a></li>
+                    <li>></li>
+                    <li><a href="javascript:void(0)">My Orders</a></li>
+               </ul>
+          </div>
+          {{ range .orderlist}}
+          <div class="flex my-order-row">
+               <div class="flex my-ord-lft">
+                    <img src="{{.Imagepath}}">
+                    <div class="myord-cont">
+                         <h3>{{.Title}}</h3>
+                    </div>
+               </div>
+               <div class="my-ord-amt">
+                    ₹{{.Price}}
+               </div>
+               <div class="my-ord-lst flex">
+                    <p>Added on {{.Createddate}}</p>
+
+               </div>
+          </div>
+
+          {{end}}
+
+     </div>
+
+</div>
+{{ template "templates/layouts/footer.html"}}

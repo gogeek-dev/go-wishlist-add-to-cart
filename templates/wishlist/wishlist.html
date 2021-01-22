@@ -1,0 +1,88 @@
+<title> Wish List </title>
+{{ template "templates/layouts/header.html" .}}
+
+
+<div class="page-wrapper">
+
+  <div class="box-wrapper wishlist-wrapper">
+
+
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Product</th>
+
+            <th><a href="/removeall" onclick="return confirm('Are you sure you want to delete all  item?');">Remove</a>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+
+          {{range.wishlist}}
+          <tr>
+            <td> <img src="{{.Imagepath}}"> </td>
+            <td>
+              <h3>{{.Title}}</h3>
+              <div class="flex rev-row">
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <p>(194 Reviews)</p>
+              </div>
+              <h2>₹{{.Price}}</h2>
+            </td>
+
+            <td class="text-center"><a data-toggle="modal" data-target="#myModal{{.ID}}" style="cursor: pointer;"> <img
+                  src="assets/img/trash.svg"> </a>
+            </td>
+
+          </tr>
+
+
+          <div class="modal fade" id="myModal{{.ID}}" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content " style="text-align: center;background-color:#328BA7;">
+
+                <div class="modal-header">
+
+                  <h4 style="color:white;">Delete Wishlist</h4>
+
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                </div>
+
+                <div class="modal-body" style="background-color: white;">
+                  <p>Are you sure ! you want to delete this item?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                  <a href="/deletewishs?wid={{.ID}}"><button type="button" class="btn btn-danger">Delete</button></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {{ end }}
+
+
+
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+{{ template "templates/layouts/footer.html"}}
