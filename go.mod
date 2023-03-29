@@ -1,4 +1,4 @@
-module github.com/gogeek-dev/go-addtocart
+module github.com/gogeek-dev/go-wishlist-add-to-cart
 
 go 1.19
 
