@@ -1,4 +1,4 @@
-package addtocart
+package gowishlistaddtocart
 
 import (
 	"encoding/json"
